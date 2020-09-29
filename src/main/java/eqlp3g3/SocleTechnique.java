@@ -21,6 +21,13 @@ import eqlp3g3.ENavigateur;
 
 public class SocleTechnique {
 	
+	static WebDriver driver;
+	
+	static void connexion () throws InterruptedException {
+		
+		driver.get("http://grp3automobo.ddns.net:8090/shop/");
+	}
+	
 	public static void renseignerChamps(WebElement we, String s) {
 		we.clear();
 		we.sendKeys(s);
