@@ -3,6 +3,7 @@ package eqlp3g3;
 import java.io.File;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -80,5 +81,33 @@ public class SocleTechnique {
 		return text;
 	}
 
+	static boolean chercherElement(WebDriver driver, String s, String xpath){ 
+		List<WebElement> lignes = driver.findElements(By.xpath(xpath));
+		for(WebElement ligne : lignes){
+		   List<WebElement> cases = ligne.findElements(By.xpath("td"));
+		   for(WebElement cellule : cases) {
+			   if(cellule.getText().equals(s)){
+				   return true;	
+			   }
+		   }
+		}
+		return false;
+	}
+	
+	static int retournerNumeroDeLigne(WebDriver driver, String s, String xpath){ 
+		int ligneCourante = 1;
+		
+		List<WebElement> lignes = driver.findElements(By.xpath(xpath));
+		for(WebElement ligne : lignes){
+		   List<WebElement> cases = ligne.findElements(By.xpath("td"));
+		   for(WebElement cellule : cases) {
+			   if(cellule.getText().equals(s)){
+				   return ligneCourante;
+			   }
+		   }
+	      ligneCourante++;
+		}
+		return -1;
+	}
 
 }
