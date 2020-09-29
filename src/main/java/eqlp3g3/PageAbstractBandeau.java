@@ -11,6 +11,10 @@ public abstract class PageAbstractBandeau {
 	@FindBy (xpath = "//a[@onclick='viewShoppingCartPage();']")
 	WebElement paiement;
 
-	@FindBy (xpath = "//div [@class='mainmenu hidden-xs']//a[text()='Tables']")
+	@FindBy (xpath = "//div[@class='mainmenu hidden-xs']//a[text()='Tables']")
 	WebElement tables_category;
+	
+	@FindBy (xpath = "//font/strong")
+	WebElement nb_elem_panier;
+	
 }

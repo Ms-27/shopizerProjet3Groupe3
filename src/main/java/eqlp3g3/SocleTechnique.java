@@ -15,6 +15,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.slf4j.Logger;
 
 import eqlp3g3.ENavigateur;
@@ -22,11 +23,6 @@ import eqlp3g3.ENavigateur;
 public class SocleTechnique {
 	
 	static WebDriver driver;
-	
-	static void connexion () throws InterruptedException {
-		
-		driver.get("http://grp3automobo.ddns.net:8090/shop/");
-	}
 	
 	public static void renseignerChamps(WebElement we, String s) {
 		we.clear();
@@ -92,6 +88,19 @@ public class SocleTechnique {
 		List<WebElement> lignes = driver.findElements(By.xpath(xpath));
 		for(WebElement ligne : lignes){
 		   List<WebElement> cases = ligne.findElements(By.xpath("td"));
+		   for(WebElement cellule : cases) {
+			   if(cellule.getText().equals(s)){
+				   return true;	
+			   }
+		   }
+		}
+		return false;
+	}
+	
+	static boolean chercherElementEntete(WebDriver driver, String s, String xpath){ 
+		List<WebElement> lignes = driver.findElements(By.xpath(xpath));
+		for(WebElement ligne : lignes){
+		   List<WebElement> cases = ligne.findElements(By.xpath("th"));
 		   for(WebElement cellule : cases) {
 			   if(cellule.getText().equals(s)){
 				   return true;	

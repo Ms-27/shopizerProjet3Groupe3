@@ -19,4 +19,11 @@ public class PagePanier extends PageAbstractBandeau {
 
 	@FindBy (xpath = "//a[text()='Effectuer le paiement']")
 	WebElement btn_effectuer_paiement;
+	
+	@FindBy (xpath = "//h1[@class='entry-title']")
+	WebElement titre_page_panier;
+	
+	@FindBy (xpath = "//div[@class='cart-img']/img")
+	WebElement image_article;
+	
 }
