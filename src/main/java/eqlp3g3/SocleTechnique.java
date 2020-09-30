@@ -98,15 +98,13 @@ public class SocleTechnique {
 	}
 	
 	static boolean chercherElementEntete(WebDriver driver, String s, String xpath){ 
-		List<WebElement> lignes = driver.findElements(By.xpath(xpath));
-		for(WebElement ligne : lignes){
+		WebElement ligne = driver.findElement(By.xpath(xpath));
 		   List<WebElement> cases = ligne.findElements(By.xpath("th"));
 		   for(WebElement cellule : cases) {
 			   if(cellule.getText().equals(s)){
 				   return true;	
 			   }
-		   }
-		}
+		  }
 		return false;
 	}
 	
