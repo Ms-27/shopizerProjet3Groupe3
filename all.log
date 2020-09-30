@@ -1,0 +1,3 @@
+2020-09-30 16:45:45.348 [main] ERROR eqlp3g3.TestsCategorieTable - [[ChromeDriver: chrome on WINDOWS (7596510e569d2b4dd354d4a030b6095e)] -> xpath: //div [@id='productsContainer']//div[@item-name='Natural root console']//img] indisponible
+2020-09-30 16:45:45.839 [main] INFO  eqlp3g3.TestsCategorieTable - [[ChromeDriver: chrome on WINDOWS (7596510e569d2b4dd354d4a030b6095e)] -> xpath: //h3[@itemprop='name' and contains(.,'Coffee')]] présent
+2020-09-30 16:45:46.940 [main] INFO  eqlp3g3.TestsCategorieTable - [[ChromeDriver: chrome on WINDOWS (7596510e569d2b4dd354d4a030b6095e)] -> xpath: //button[@class='btn addToCart addToCartButton btn-buy']] présent

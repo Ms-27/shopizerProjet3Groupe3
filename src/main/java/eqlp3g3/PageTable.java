@@ -20,8 +20,15 @@ public class PageTable extends PageAbstractBandeau {
 	@FindBy (xpath="//h3[@itemprop='name' and contains(.,'Coffee')]")
 	WebElement produit_coffee;
 	
-	@FindBy (xpath ="//li/a[contains(text(),'Asian Wood')]")
-	WebElement filtre_asianwood;
+	@FindBy (xpath = "//ul[@class='nav nav-list']/li[3]")
+	WebElement filtre_AsianWood;
 	
-
+	@FindBy (xpath ="//div [@id='productsContainer']//div[@item-name='Natural root console']//img")
+    WebElement image_pagetable;
+	
+	@FindBy (xpath ="//a[@productid='200']")
+	WebElement bouton_ajoutpanier;
+	
+	@FindBy (xpath = "//span[@itemprop='price']")
+	WebElement prix_initial;
 }
