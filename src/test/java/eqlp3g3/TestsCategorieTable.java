@@ -1,5 +1,7 @@
 package eqlp3g3;
 
+import static org.junit.Assert.*;
+
 import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
@@ -32,18 +34,26 @@ public class TestsCategorieTable {
 		action = new Actions(driver);
 	}
 	
-	@After
-	public void tearDown() {
-		driver.quit();
-	}
+	//@After
+	//public void tearDown() {
+	//	driver.quit();
+	//}
 
 	
 	@Test
 	public void test() throws InterruptedException {
 		driver.get("http://grp3automobo.ddns.net:8090/shop/");
 		
-		//Pas1 Intanciation page accueil  
+		//Pas1 Instanciation page accueil  
 		PageAccueil page_accueil = PageFactory.initElements(driver, PageAccueil.class);
+		
+		//Pas 2 Instanciation page catégorie Table et vérification contenu
+		PageTable page_table = page_accueil.clicCategorieTable(driver);
+		assertTrue(page_table.titre_pagetable.isDisplayed()
+				&&page_table.produit_natural.isDisplayed()
+				&&page_table.produit_asian.isDisplayed()
+				&&page_table.produit_edge.isDisplayed()
+				&&page_table.produit_coffee.isDisplayed());
 	}
 	
 }

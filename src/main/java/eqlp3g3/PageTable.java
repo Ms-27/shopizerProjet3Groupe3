@@ -5,8 +5,23 @@ import org.openqa.selenium.support.FindBy;
 
 public class PageTable extends PageAbstractBandeau {
 	
-	@FindBy (xpath="//li[@class='active']/a[@href='http://localhost:8080/shop/shop/category/tables.html/ref=c:1,1']")
-	private WebElement titre_pagetable;
+	@FindBy (xpath="//h2[@class='shop-banner-title lead' and contains(.,'Tables')]")
+	WebElement titre_pagetable;
+	
+	@FindBy (xpath="//h3[@itemprop='name' and contains(.,'Natural root')]")
+	WebElement produit_natural;
+	
+	@FindBy (xpath="//h3[@itemprop='name' and contains(.,'Asian rosewood')]")
+	WebElement produit_asian;
+	
+	@FindBy (xpath="//h3[@itemprop='name' and contains(.,'Edge')]")
+	WebElement produit_edge;
+	
+	@FindBy (xpath="//h3[@itemprop='name' and contains(.,'Coffee')]")
+	WebElement produit_coffee;
+	
+	@FindBy (xpath ="//li/a[contains(text(),'Asian Wood')]")
+	WebElement filtre_asianwood;
 	
 
 }
