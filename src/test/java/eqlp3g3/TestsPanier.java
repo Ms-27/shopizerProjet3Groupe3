@@ -114,7 +114,7 @@ public class TestsPanier {
 		//STEP6
 		//Clic sur le bouton Recalculer
 		page_panier.btn_recalculer.click();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		
 		//Vérification de la mise à jour des totaux
 		String total_section_deux = page_panier.total_section.getText().substring(3, 9);
